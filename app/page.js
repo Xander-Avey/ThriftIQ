@@ -19,18 +19,31 @@ export default function Home() {
   const msgs = ['Identifying item...', 'Checking market demand...', 'Scanning recent sales...', 'Calculating flip potential...'];
 
   function handleFile(file) {
-    if (!file) return;
-    setMediaType(file.type || 'image/jpeg');
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      setImagePreview(ev.target.result);
-      setImageBase64(ev.target.result.split(',')[1]);
-      setResult(null);
-      setError(null);
-      setPage('scan');
-    };
-    reader.readAsDataURL(file);
-  }
+  if (!file) return;
+  setMediaType('image/jpeg');
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const img = new Image();
+  const url = URL.createObjectURL(file);
+  img.onload = () => {
+    const maxSize = 800;
+    let w = img.width;
+    let h = img.height;
+    if (w > h && w > maxSize) { h = (h * maxSize) / w; w = maxSize; }
+    else if (h > maxSize) { w = (w * maxSize) / h; h = maxSize; }
+    canvas.width = w;
+    canvas.height = h;
+    ctx.drawImage(img, 0, 0, w, h);
+    const compressed = canvas.toDataURL('image/jpeg', 0.7);
+    setImagePreview(compressed);
+    setImageBase64(compressed.split(',')[1]);
+    setResult(null);
+    setError(null);
+    setPage('scan');
+    URL.revokeObjectURL(url);
+  };
+  img.src = url;
+}
 
   function handleDrop(e) {
     e.preventDefault();
