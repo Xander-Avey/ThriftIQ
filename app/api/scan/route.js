@@ -1,5 +1,3 @@
-
-
 export async function POST(request) {
   try {
     const { imageBase64, mediaType } = await request.json();
@@ -41,7 +39,7 @@ export async function POST(request) {
   "profitPotential": "$X - $Y profit",
   "sellIn": "X-Y days average",
   "platforms": [
-    {"name": "eBay", "price": "$XX-$XX", "best": true or false},
+    {"name": "eBay", "price": "$XX-$XX", "best": true},
     {"name": "Poshmark", "price": "$XX-$XX", "best": false},
     {"name": "Facebook Marketplace", "price": "$XX-$XX", "best": false}
   ],
@@ -54,18 +52,20 @@ export async function POST(request) {
       }),
     });
 
-    const data = await response.json();
-
     if (!response.ok) {
+      const err = await response.text();
+      console.error('Anthropic error:', err);
       return Response.json({ error: 'AI service error' }, { status: 500 });
     }
 
+    const data = await response.json();
     const text = data.content.map((i) => i.text || '').join('');
     const clean = text.replace(/```json|```/g, '').trim();
     const result = JSON.parse(clean);
 
     return Response.json(result);
   } catch (err) {
+    console.error('Route error:', err);
     return Response.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }
