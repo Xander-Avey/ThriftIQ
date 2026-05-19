@@ -342,4 +342,226 @@
   padding: 12px;
   border-radius: 8px;
   font-size: 14px;
-  margin-bottom
+  margin-bottom: 0.75rem; 
+}
+
+.analyzing {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid #EAF3DE;
+  border-top-color: #639922;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.analyzing p {
+  font-size: 15px;
+  color: #666;
+}
+
+.resultSection {
+  background: #fff;
+  border: 1px solid #e0ead4;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.verdictFlip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #EAF3DE;
+  color: #27500A;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.verdictSkip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FCEBEB;
+  color: #A32D2D;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.itemName {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.itemCondition {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 1.25rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+
+.stat {
+  background: #f8faf5;
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.statVal {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.green { color: #3B6D11; }
+
+.platforms { margin-bottom: 1.25rem; }
+
+.platformsLabel {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.platformRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.platformRow:last-child { border-bottom: none; }
+
+.platformName {
+  font-size: 14px;
+  color: #1a1a1a;
+  flex: 1;
+}
+
+.platformPrice {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3B6D11;
+}
+
+.platformTag {
+  font-size: 11px;
+  background: #EAF3DE;
+  color: #3B6D11;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.flipTip {
+  background: #EAF3DE;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.tipLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #27500A;
+  margin-bottom: 6px;
+}
+
+.flipTip p {
+  font-size: 14px;
+  color: #3B6D11;
+  line-height: 1.6;
+}
+
+.scanAgain {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #e0ead4;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.scanAgain:hover { background: #f8faf5; }
+
+.upgradeBtn {
+  width: 100%;
+  background: #639922;
+  color: #fff;
+  border: none;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.upgradeBtn:hover { background: #3B6D11; }
+
+.paywallCard {
+  background: #fff;
+  border: 1px solid #e0ead4;
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.lockIcon {
+  font-size: 40px;
+  margin-bottom: 1rem;
+}
+
+.paywallCard h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+}
+
+.paywallCard p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.backBtn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #e0ead4;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.backBtn:hover { background: #f8faf5; }
