@@ -6,7 +6,11 @@ const FREE_SCANS = 3;
 
 export default function Home() {
   const [page, setPage] = useState('landing');
-  const [scansLeft, setScansLeft] = useState(FREE_SCANS);
+const [scansLeft, setScansLeft] = useState(() => {
+  if (typeof window === 'undefined') return FREE_SCANS;
+  const saved = localStorage.getItem('thriftiq_scans');
+  return saved !== null ? parseInt(saved) : FREE_SCANS;
+});
   const [imagePreview, setImagePreview] = useState(null);
   const [imageBase64, setImageBase64] = useState(null);
   const [mediaType, setMediaType] = useState(null);
@@ -72,7 +76,11 @@ export default function Home() {
       setAnalyzing(false);
       if (data.error) { setError('Something went wrong. Try again.'); return; }
       setResult(data);
-      setScansLeft((s) => s - 1);
+      setScansLeft((s) => {
+  const newVal = s - 1;
+  localStorage.setItem('thriftiq_scans', newVal);
+  return newVal;
+});
       setPage('result');
     } catch {
       clearInterval(interval);
