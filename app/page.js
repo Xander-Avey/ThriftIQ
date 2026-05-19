@@ -154,7 +154,7 @@ const [scansLeft, setScansLeft] = useState(() => {
               <li>✓ Best platform to sell</li>
               <li>✓ Price history trends</li>
               <li>✓ Profit calculator</li>
-            </ul><button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'none',background:'#639922',color:'#fff',cursor:'pointer',fontSize:'14px',fontWeight:'600'}} onClick={() => window.open('https://buy.stripe.com/test_00w9ATfHW57Q05k7ab43S00', '_blank')}>Get Flipper — $12/mo</button>
+            </ul><button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'none',background:'#639922',color:'#fff',cursor:'pointer',fontSize:'14px',fontWeight:'600'}} onClick={() => window.open('https://buy.stripe.com/5kQ4gBfys2StfJcx8bf001', '_blank')}>Get Flipper — $12/mo</button>
           </div>
           <div className={styles.planCard}>
             <div className={styles.planName}>Pro</div>
@@ -164,7 +164,7 @@ const [scansLeft, setScansLeft] = useState(() => {
               <li>✓ Everything in Flipper</li>
               <li>✓ Bulk scan mode</li>
               <li>✓ Priority support</li>
-            </ul><button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'none',background:'#1a1a1a',color:'#fff',cursor:'pointer',fontSize:'14px',fontWeight:'600'}} onClick={() => window.open('https://buy.stripe.com/test_7sY14n53i1VE5pE1PR43S01', '_blank')}>Get Pro — $24/mo</button>
+            </ul><button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'none',background:'#1a1a1a',color:'#fff',cursor:'pointer',fontSize:'14px',fontWeight:'600'}} onClick={() => window.open('https://buy.stripe.com/fZubJ32LG3Wxd7Bap0bfO00', '_blank')}>Get Pro — $24/mo</button>
           </div>
         </div>
       </div>
