@@ -154,7 +154,7 @@ const [scansLeft, setScansLeft] = useState(() => {
               <li>✓ Best platform to sell</li>
               <li>✓ Price history trends</li>
               <li>✓ Profit calculator</li>
-            </ul><button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'none',background:'#639922',color:'#fff',cursor:'pointer',fontSize:'14px',fontWeight:'600'}} onClick={() => window.open('https://buy.stripe.com/5kQ4gBfys2StfJcx8bf001', '_blank')}>Get Flipper — $12/mo</button>
+            </ul><button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'none',background:'#639922',color:'#fff',cursor:'pointer',fontSize:'14px',fontWeight:'600'}} onClick={() => window.open('https://buy.stripe.com/5kQ4gBfys2StffJcx8bfO01', '_blank')}>Get Flipper — $12/mo</button>
           </div>
           <div className={styles.planCard}>
             <div className={styles.planName}>Pro</div>
