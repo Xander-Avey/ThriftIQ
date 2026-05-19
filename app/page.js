@@ -174,7 +174,7 @@ export default function Home() {
         <div className={styles.lockIcon}>🔒</div>
         <h2>You've used your 3 free scans</h2>
         <p>Upgrade to Flipper for 50 scans/month plus price history, profit calculator, and best platform rankings.</p>
-        <button className={styles.upgradeBtn}>Upgrade to Flipper — $12/mo</button>
+        <button className={styles.upgradeBtn} onClick={() => window.open('https://buy.stripe.com/test_00w9ATfHW57Q05k7ab43S00', '_blank')}>Upgrade to Flipper — $12/mo</button>
         <button className={styles.backBtn} onClick={() => setPage('landing')}>Back to home</button>
       </div>
     </div>
@@ -249,7 +249,7 @@ export default function Home() {
           </div>
           <button className={styles.scanAgain} onClick={reset}>Scan another item</button>
           {scansLeft === 0 && (
-            <button className={styles.upgradeBtn} onClick={() => setPage('paywall')}>Upgrade for more scans</button>
+            <button className={styles.upgradeBtn} onClick={() => window.open('https://buy.stripe.com/test_00w9ATfHW57Q05k7ab43S00', '_blank')}>Upgrade for more scans</button>
           )}
         </div>
       )}
