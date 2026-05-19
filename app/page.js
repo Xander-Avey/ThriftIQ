@@ -145,6 +145,28 @@ const [scansLeft, setScansLeft] = useState(() => {
               <li>✓ Flip or skip score</li>
             </ul><button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'1px solid #e0ead4',background:'transparent',cursor:'pointer',fontSize:'14px'}} onClick={() => setPage('scan')}>Get started free</button>
           </div>
+  <div className={styles.planCard}>
+  <div className={styles.planName}>Starter</div>
+  <div className={styles.planPrice}>$5 <span>one time</span></div>
+  <ul className={styles.planFeatures}>
+    <li>✓ 10 scans</li>
+    <li>✓ Never expires</li>
+    <li>✓ Resale value estimate</li>
+    <li>✓ Flip or skip score</li>
+  </ul>
+  <button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'none',background:'#639922',color:'#fff',cursor:'pointer',fontSize:'14px',fontWeight:'600'}} onClick={() => window.open('https://buy.stripe.com/3cIcN771W8cNd7BdBcbfO02', '_blank')}>Get Starter — $5</button>
+</div>
+<div className={styles.planCard}>
+  <div className={styles.planName}>Value Pack</div>
+  <div className={styles.planPrice}>$10 <span>one time</span></div>
+  <ul className={styles.planFeatures}>
+    <li>✓ 25 scans</li>
+    <li>✓ Never expires</li>
+    <li>✓ Resale value estimate</li>
+    <li>✓ Flip or skip score</li>
+  </ul>
+  <button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'none',background:'#639922',color:'#fff',cursor:'pointer',fontSize:'14px',fontWeight:'600'}} onClick={() => window.open('https://buy.stripe.com/00w7sN1HC64FgjN0OqbfO03', '_blank')}>Get Value Pack — $10</button>
+</div>
           <div className={`${styles.planCard} ${styles.featured}`}>
             <div className={styles.popular}>Most popular</div>
             <div className={styles.planName}>Flipper</div>
