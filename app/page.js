@@ -127,7 +127,7 @@ export default function Home() {
           <div className={`${styles.planCard} ${styles.featured}`}>
             <div className={styles.popular}>Most popular</div>
             <div className={styles.planName}>Flipper</div>
-            <div className={styles.planPrice}>$9 <span>/mo</span></div>
+            <div className={styles.planPrice}>$12 <span>/mo</span></div>
             <ul className={styles.planFeatures}>
               <li>✓ 50 scans per month</li>
               <li>✓ Best platform to sell</li>
@@ -137,7 +137,7 @@ export default function Home() {
           </div>
           <div className={styles.planCard}>
             <div className={styles.planName}>Pro</div>
-            <div className={styles.planPrice}>$19 <span>/mo</span></div>
+            <div className={styles.planPrice}>$24 <span>/mo</span></div>
             <ul className={styles.planFeatures}>
               <li>✓ Unlimited scans</li>
               <li>✓ Everything in Flipper</li>
@@ -161,7 +161,7 @@ export default function Home() {
         <div className={styles.lockIcon}>🔒</div>
         <h2>You've used your 3 free scans</h2>
         <p>Upgrade to Flipper for 50 scans/month plus price history, profit calculator, and best platform rankings.</p>
-        <button className={styles.upgradeBtn}>Upgrade to Flipper — $9/mo</button>
+        <button className={styles.upgradeBtn}>Upgrade to Flipper — $12/mo</button>
         <button className={styles.backBtn} onClick={() => setPage('landing')}>Back to home</button>
       </div>
     </div>
