@@ -135,7 +135,7 @@ export default function Home() {
               <li>✓ 3 scans per month</li>
               <li>✓ Resale value estimate</li>
               <li>✓ Flip or skip score</li>
-            </ul>
+            </ul><button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'1px solid #e0ead4',background:'transparent',cursor:'pointer',fontSize:'14px'}} onClick={() => setPage('scan')}>Get started free</button>
           </div>
           <div className={`${styles.planCard} ${styles.featured}`}>
             <div className={styles.popular}>Most popular</div>
@@ -146,7 +146,7 @@ export default function Home() {
               <li>✓ Best platform to sell</li>
               <li>✓ Price history trends</li>
               <li>✓ Profit calculator</li>
-            </ul>
+            </ul><button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'none',background:'#639922',color:'#fff',cursor:'pointer',fontSize:'14px',fontWeight:'600'}} onClick={() => window.open('https://buy.stripe.com/test_00w9ATfHW57Q05k7ab43S00', '_blank')}>Get Flipper — $12/mo</button>
           </div>
           <div className={styles.planCard}>
             <div className={styles.planName}>Pro</div>
@@ -156,7 +156,7 @@ export default function Home() {
               <li>✓ Everything in Flipper</li>
               <li>✓ Bulk scan mode</li>
               <li>✓ Priority support</li>
-            </ul>
+            </ul><button style={{width:'100%',marginTop:'1rem',padding:'10px',borderRadius:'8px',border:'none',background:'#1a1a1a',color:'#fff',cursor:'pointer',fontSize:'14px',fontWeight:'600'}} onClick={() => window.open('https://buy.stripe.com/test_7sY14n53i1VE5pE1PR43S01', '_blank')}>Get Pro — $24/mo</button>
           </div>
         </div>
       </div>
