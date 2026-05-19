@@ -83,7 +83,6 @@ export default function Home() {
         <div className={styles.logo}>Thrift<span>IQ</span></div>
         <button className={styles.navBtn} onClick={() => setPage('scan')}>Try for free</button>
       </nav>
-
       <div className={styles.hero}>
         <div className={styles.badge}>AI-powered resale scanner</div>
         <h1>Know what it's worth<br /><span>before you buy it.</span></h1>
@@ -91,7 +90,6 @@ export default function Home() {
         <button className={styles.heroCta} onClick={() => setPage('scan')}>Try it free — 3 scans included</button>
         <p className={styles.noCard}>No credit card needed</p>
       </div>
-
       <div className={styles.howSection}>
         <p className={styles.sectionLabel}>How it works</p>
         <h2>Three steps to your flip price</h2>
@@ -113,7 +111,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <div className={styles.pricingSection}>
         <p className={styles.sectionLabel}>Pricing</p>
         <h2>Start free. Scale as you flip.</h2>
@@ -150,7 +147,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <footer className={styles.footer}>© 2026 ThriftIQ · Built to help you flip smarter</footer>
     </div>
   );
@@ -179,22 +175,14 @@ export default function Home() {
           {scansLeft} free scan{scansLeft !== 1 ? 's' : ''} left
         </div>
       </div>
-
       <input type="file" accept="image/*" ref={fileRef} style={{display:'none'}} onChange={e => handleFile(e.target.files[0])} />
-
       {!imagePreview && !analyzing && (
-        <div
-          className={styles.uploadArea}
-          onClick={() => fileRef.current.click()}
-          onDrop={handleDrop}
-          onDragOver={e => e.preventDefault()}
-        >
+        <div className={styles.uploadArea} onClick={() => fileRef.current.click()} onDrop={handleDrop} onDragOver={e => e.preventDefault()}>
           <div className={styles.uploadIcon}>📷</div>
           <p>Tap to upload a photo</p>
           <span>clothing · furniture · electronics · sneakers · tools</span>
         </div>
       )}
-
       {imagePreview && !analyzing && page !== 'result' && (
         <div className={styles.previewSection}>
           <div className={styles.previewWrap}>
@@ -205,3 +193,53 @@ export default function Home() {
           <button className={styles.scanBtn} onClick={startScan}>✦ Scan this item</button>
         </div>
       )}
+      {analyzing && (
+        <div className={styles.analyzing}>
+          <div className={styles.spinner}></div>
+          <p>{analyzeMsg}</p>
+        </div>
+      )}
+      {page === 'result' && result && (
+        <div className={styles.resultSection}>
+          <div className={result.verdict === 'FLIP' ? styles.verdictFlip : styles.verdictSkip}>
+            {result.verdict === 'FLIP' ? '↑ Flip it' : '↓ Skip it'}
+          </div>
+          <div className={styles.itemName}>{result.itemName}</div>
+          <div className={styles.itemCondition}>Condition: {result.condition}</div>
+          <div className={styles.statsGrid}>
+            <div className={styles.stat}>
+              <div className={styles.statLabel}>Resale value</div>
+              <div className={`${styles.statVal} ${styles.green}`}>${result.resaleValue.low}–${result.resaleValue.high}</div>
+            </div>
+            <div className={styles.stat}>
+              <div className={styles.statLabel}>Profit potential</div>
+              <div className={styles.statVal}>{result.profitPotential}</div>
+            </div>
+            <div className={styles.stat}>
+              <div className={styles.statLabel}>Sells in</div>
+              <div className={styles.statVal}>{result.sellIn}</div>
+            </div>
+          </div>
+          <div className={styles.platforms}>
+            <div className={styles.platformsLabel}>Best platforms to sell</div>
+            {result.platforms.map((p, i) => (
+              <div key={i} className={styles.platformRow}>
+                <span className={styles.platformName}>{p.name}</span>
+                <span className={styles.platformPrice}>{p.price}</span>
+                {p.best && <span className={styles.platformTag}>Best</span>}
+              </div>
+            ))}
+          </div>
+          <div className={styles.flipTip}>
+            <div className={styles.tipLabel}>💡 Flip tip</div>
+            <p>{result.flipTip}</p>
+          </div>
+          <button className={styles.scanAgain} onClick={reset}>Scan another item</button>
+          {scansLeft === 0 && (
+            <button className={styles.upgradeBtn} onClick={() => setPage('paywall')}>Upgrade for more scans</button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
